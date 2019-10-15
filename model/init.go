@@ -12,7 +12,7 @@ var DB *sqlx.DB
 
 func init() {
 	var err error
-	DB, err = sqlx.Open(`mysql`, `root:root@tcp(127.0.0.1)/class?charsetutf8`)
+	DB, err = sqlx.Open(`mysql`, `root:root@tcp(127.0.0.1)/class?charset=utf8&parseTime=true`)
 	if err != nil {
 		fmt.Println("数据库连接失败")
 		os.Exit(1)
